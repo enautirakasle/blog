@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import modelo.PostModelo;
+
 /**
  * Servlet implementation class inicio
  */
@@ -28,7 +30,9 @@ public class inicio extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.setAttribute("nombre", "Eñaut");
+		PostModelo pm = new PostModelo();
+
+		request.setAttribute("posts", pm.selectAll());
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
