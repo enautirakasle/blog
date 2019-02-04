@@ -9,19 +9,65 @@ import java.util.Date;
  * @author ikaslea
  *
  */
-public class Usuario extends Persona{
+public class Usuario{
 	
 	//atributos
+	private int id;
+	private String dni;
+	private String nombre;
+	private String apellido;
 	private boolean activo;
 	
 	private ArrayList<Pagina> paginas;
 	private ArrayList<Post> posts;
 	
 	public Usuario() {
-		super();
 	}
 	
+	public Usuario(String nombre){
+		this.nombre=nombre;
+	}
 	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getDni() {
+		return dni;
+	}
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
 	public boolean isActivo() {
 		return activo;
 	}
@@ -52,16 +98,14 @@ public class Usuario extends Persona{
 	}
 
 
-	public Usuario(String nombre){
-		super(nombre);
-	}
+
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Usuario [id=" + super.id + ", dni=" + super.getDni() + ", nombre=" + this.nombre + ", apellido=" + this.apellido + ", activo="
+		return "Usuario [id=" + id + ", dni=" + getDni() + ", nombre=" + this.nombre + ", apellido=" + this.apellido + ", activo="
 				+ this.activo + "]";
 	}
 	
