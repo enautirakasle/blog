@@ -1,4 +1,4 @@
-package modelo;
+package modelo.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import modelo.bean.Usuario;
 
 public class PostModelo extends Conector{
 
-	public Object selectAll() {
+	public ArrayList<Post> selectAll() {
 
 		// crear arrayList
 		ArrayList<Post> posts = new ArrayList<Post>();

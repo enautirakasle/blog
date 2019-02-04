@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.PostModelo;
+import modelo.dao.PostModelo;
 
 /**
  * Servlet implementation class inicio
