@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import modelo.bean.Usuario;
 import modelo.dao.PostModelo;
 
 /**
@@ -31,7 +32,7 @@ public class inicio extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PostModelo pm = new PostModelo();
-
+		request.setAttribute("usuarioLogueado", new Usuario("EnautLogeado"));
 		request.setAttribute("posts", pm.selectAll());
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
