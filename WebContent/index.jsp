@@ -37,29 +37,13 @@
 </head>
 <body class="d-flex flex-column h-100">
 	<header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="#">Navbar</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarNav" aria-controls="navbarNav"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="inicio">Home
-					<span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="usuarios">Usuarios</a></li>
-			<li class="nav-item"><a class="nav-link" href="categorias">Categorias</a></li>
-			<li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
-		</ul>
-	</div>
-	</nav>
+		<%@ include file="templates/navBar.jsp"%>
 	</header>
 
 	<!-- Begin page content -->
 	<main role="main" class="flex-shrink-0">
 	<div class="container">
+		<h1>${usuarioLogueado.nombre}</h1>
 		<h1 class="mt-5">Sticky footer with fixed navbar</h1>
 		<p class="lead">
 			Pin a footer to the bottom of the viewport in desktop browsers with
@@ -87,15 +71,15 @@
 					</div>
 				</div>
 			</c:forEach>
-		</div><!-- fin row -->
+		</div>
+		<!-- fin row -->
+		<%@ include file="templates/footer.jsp"%>
 	</div>
 	</main>
-	
-	<footer class="footer mt-auto py-3">
-		<div class="container">
-			<span class="text-muted">Place sticky footer content here.</span>
-		</div>
-	</footer>
+
+
+
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
