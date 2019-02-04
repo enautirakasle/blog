@@ -5,13 +5,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Listado de usuarios</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="#">Navbar</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarNav" aria-controls="navbarNav"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+			<li class="nav-item active"><a class="nav-link" href="#">Home
+					<span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="usuarios">Usuarios</a></li>
+			<li class="nav-item"><a class="nav-link" href="categorias">Categorias</a></li>
+			<li class="nav-item"><a class="nav-link disabled" href="#"
+				tabindex="-1" aria-disabled="true">Disabled</a></li>
+		</ul>
+	</div>
+	</nav>
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -20,14 +39,31 @@
 						<tr>
 							<th>Nombre</th>
 							<th>Apellido</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${usuarios}" var="usuario">
-							<tr>
-								<td>${usuario.nombre}</td>
-								<td>${usuario.apellido}</td>
-							</tr>
+							<c:if test="${usuario.activo}">
+								<tr class="table-success">
+							</c:if>
+							<c:if test="${usuario.activo == false}">
+								<tr class="table-danger">
+							</c:if>
+									<td>${usuario.nombre}</td>
+									<td> ${usuario.apellido}</td>
+									<td>
+										<a href="usuario/ver?id=${usuario.id}">Ver</a>
+										<a href="usuario/editar?id=${usuario.id}">Editar</a>
+										<a href="usuario/eliminar?id=${usuario.id}">Eliminar</a>
+										<c:if test="${usuario.activo == true}">
+											<a href="usuario/desactivar?id=${usuario.id}">Desactivar</a>
+										</c:if>
+										<c:if test="${usuario.activo == false}">
+											<a href="usuario/activar?id=${usuario.id}">Activar</a>
+										</c:if>
+									</td>
+								</tr>
 						</c:forEach>
 					</tbody>
 
