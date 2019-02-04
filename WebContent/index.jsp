@@ -80,76 +80,23 @@
 				sticky footer</a> minus the navbar.
 		</p>
 		<div class="row">
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<img src="img/iria.jpg" class="card-img-top" alt="iria">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+			<c:forEach items="${posts}" var="post">
+				<div class="col-4">
+					<div class="card" style="width: 18rem;">
+						<img src="img/iria.jpg" class="card-img-top" alt="iria">
+						<div class="card-body">
+							<h5 class="card-title">${post.titulo}</h5>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<img src="img/iria.jpg" class="card-img-top" alt="iria">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<img src="img/iria.jpg" class="card-img-top" alt="iria">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<img src="img/iria.jpg" class="card-img-top" alt="iria">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<img src="img/iria.jpg" class="card-img-top" alt="iria">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<img src="img/iria.jpg" class="card-img-top" alt="iria">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
-		</div>
+			</c:forEach>
+		</div><!-- fin row -->
 	</div>
 	</main>
-
+	
 	<footer class="footer mt-auto py-3">
 		<div class="container">
 			<span class="text-muted">Place sticky footer content here.</span>

@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import bean.Post;
-import bean.Usuario;
+import modelo.bean.Post;
+import modelo.bean.Usuario;
 
 public class PostModelo extends Conector{
 

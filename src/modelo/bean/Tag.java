@@ -1,7 +1,7 @@
 /**
  * 
  */
-package bean;
+package modelo.bean;
 
 import java.util.ArrayList;
 

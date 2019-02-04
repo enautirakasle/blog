@@ -1,4 +1,4 @@
-package bean;
+package modelo.bean;
 
 import java.util.ArrayList;
 import java.util.Date;

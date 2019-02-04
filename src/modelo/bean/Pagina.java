@@ -1,4 +1,4 @@
-package bean;
+package modelo.bean;
 
 public class Pagina {
 	private int id;
