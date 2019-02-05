@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<header> <%@ include file="templates/navBar.jsp"%>
+	<header> <%@ include file="../templates/parts/navBar.jsp"%>
 	</header>
 	<div class="container">
 		<div class="row">
