@@ -7,36 +7,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import modelo.dao.CategoriasModelo;
 import modelo.dao.UsuarioModelo;
 
 /**
- * Servlet implementation class usuarios
+ * Servlet implementation class categorias
  */
-@WebServlet("/usuarios")
-public class usuarios extends HttpServlet {
+@WebServlet("/categorias")
+public class Categorias extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public usuarios() {
+    public Categorias() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		UsuarioModelo um = new UsuarioModelo();
+			
+		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
 		
-		request.setAttribute("usuarios", um.selectAll());
+		CategoriasModelo cm = new CategoriasModelo();
+		request.setAttribute("categorias", cm.selectAll());
+		request.setAttribute("content", "/categorias/listado.jsp");
 		
-		//request.getRequestDispatcher("usuarios/listado.jsp").forward(request, response);
-		request.getRequestDispatcher("usuarios/listado.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
 	}
 
 	/**

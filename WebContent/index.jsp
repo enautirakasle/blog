@@ -37,7 +37,7 @@
 </head>
 <body class="d-flex flex-column h-100">
 	<header>
-		<%@ include file="templates/navBar.jsp"%>
+		<%@ include file="templates/parts/navBar.jsp"%>
 	</header>
 
 	<!-- Begin page content -->
@@ -73,7 +73,7 @@
 			</c:forEach>
 		</div>
 		<!-- fin row -->
-		<%@ include file="templates/footer.jsp"%>
+		<%@ include file="templates/parts/footer.jsp"%>
 	</div>
 	</main>
 

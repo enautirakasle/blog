@@ -7,34 +7,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.bean.Usuario;
-import modelo.dao.PostModelo;
-
 /**
- * Servlet implementation class inicio
+ * Servlet implementation class CrearUsuario
  */
-@WebServlet("/inicio")
-public class inicio extends HttpServlet {
+@WebServlet("/crearcategoria")
+public class CrearCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public inicio() {
+    public CrearCategoria() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		PostModelo pm = new PostModelo();
-		request.setAttribute("usuarioLogueado", new Usuario("EnautLogeado"));
-		request.setAttribute("posts", pm.selectAll());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
+		
+		request.setAttribute("content", "/categorias/formCrear.jsp");
+		
+		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
 	}
 
 	/**
