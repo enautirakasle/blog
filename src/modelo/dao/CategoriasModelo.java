@@ -33,4 +33,9 @@ public class CategoriasModelo extends Conector{
 		return categorias;
 	}
 
+	public void insert(Categoria categoria) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
