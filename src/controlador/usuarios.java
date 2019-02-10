@@ -35,7 +35,6 @@ public class usuarios extends HttpServlet {
 		request.setAttribute("usuarios", um.selectAll());
 		request.setAttribute("content", "/usuarios/listado.jsp");
 		
-		//
 		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
 		
 	}
