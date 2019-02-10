@@ -34,8 +34,8 @@ public class categorias extends HttpServlet {
 		
 		request.setAttribute("categorias", cm.selectAll());
 		
-		
-		request.getRequestDispatcher("categorias/listado.jsp").forward(request, response);
+		//request.setAttribute("info", "/categorias/listado.jsp");
+		request.getRequestDispatcher("templates/main.js").forward(request, response);
 	}
 
 	/**
