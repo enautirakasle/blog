@@ -28,10 +28,10 @@ public class Templates extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 //		
-//		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
+		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
 //		
-//		request.setAttribute("titulo", "kaixo requesteko tituloa naiz");
-//		request.setAttribute("info", "/templates/parts/titulo.jsp");
+		request.setAttribute("titulo", "kaixo requesteko tituloa naiz");
+		request.setAttribute("content", "/templates/parts/titulo.jsp");
 //		
 		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
 		
