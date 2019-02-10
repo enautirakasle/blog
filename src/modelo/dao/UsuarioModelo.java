@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import controlador.usuarios;
+
 import modelo.bean.Usuario;
 /**
  * Clase UsurioModelo creada para el acceso a la BBDD
