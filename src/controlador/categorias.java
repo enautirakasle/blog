@@ -22,20 +22,20 @@ public class categorias extends HttpServlet {
      */
     public categorias() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+			
+		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
+		
 		CategoriasModelo cm = new CategoriasModelo();
-		
 		request.setAttribute("categorias", cm.selectAll());
+		request.setAttribute("content", "/categorias/listado.jsp");
 		
-		//request.setAttribute("info", "/categorias/listado.jsp");
-		request.getRequestDispatcher("templates/main.js").forward(request, response);
+		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
 	}
 
 	/**
