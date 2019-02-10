@@ -7,35 +7,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.dao.CategoriasModelo;
-import modelo.dao.UsuarioModelo;
+import modelo.bean.Usuario;
+import modelo.dao.PostModelo;
 
 /**
- * Servlet implementation class categorias
+ * Servlet implementation class inicio
  */
-@WebServlet("/categorias")
-public class categorias extends HttpServlet {
+@WebServlet("/inicio")
+public class Inicio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public categorias() {
+    public Inicio() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
-		
-		CategoriasModelo cm = new CategoriasModelo();
-		request.setAttribute("categorias", cm.selectAll());
-		request.setAttribute("content", "/categorias/listado.jsp");
-		
-		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		PostModelo pm = new PostModelo();
+		request.setAttribute("usuarioLogueado", new Usuario("EnautLogeado"));
+		request.setAttribute("posts", pm.selectAll());
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**

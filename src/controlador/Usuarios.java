@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.bean.Usuario;
-import modelo.dao.PostModelo;
+import modelo.dao.UsuarioModelo;
 
 /**
- * Servlet implementation class inicio
+ * Servlet implementation class usuarios
  */
-@WebServlet("/inicio")
-public class inicio extends HttpServlet {
+@WebServlet("/usuarios")
+public class Usuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public inicio() {
+    public Usuarios() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,12 +28,15 @@ public class inicio extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		PostModelo pm = new PostModelo();
-		request.setAttribute("usuarioLogueado", new Usuario("EnautLogeado"));
-		request.setAttribute("posts", pm.selectAll());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+
+		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
+		
+		UsuarioModelo um = new UsuarioModelo();
+		request.setAttribute("usuarios", um.selectAll());
+		request.setAttribute("content", "/usuarios/listado.jsp");
+		
+		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
+		
 	}
 
 	/**
