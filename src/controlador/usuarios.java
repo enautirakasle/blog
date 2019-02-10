@@ -28,14 +28,15 @@ public class usuarios extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		request.setAttribute("navBar", "/templates/parts/navBar.jsp");
+		
 		UsuarioModelo um = new UsuarioModelo();
-		
 		request.setAttribute("usuarios", um.selectAll());
+		request.setAttribute("content", "/usuarios/listado.jsp");
 		
-		//request.getRequestDispatcher("usuarios/listado.jsp").forward(request, response);
-		request.getRequestDispatcher("usuarios/listado.jsp").forward(request, response);
+		//
+		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
 		
 	}
 
