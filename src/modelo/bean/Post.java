@@ -15,6 +15,7 @@ public class Post {
 	private String titulo;
 	private String cuerpo;
 	private String imagen;
+	private boolean publico;
 
 	private Usuario autor;
 	private Categoria categoria;
@@ -134,6 +135,14 @@ public class Post {
 	 */
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+	
+	public boolean isPublico() {
+		return publico;
+	}
+
+	public void setPublico(boolean publico) {
+		this.publico = publico;
 	}
 
 }
