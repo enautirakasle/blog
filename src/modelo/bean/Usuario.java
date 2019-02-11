@@ -17,7 +17,10 @@ public class Usuario{
 	private String nombre;
 	private String apellido;
 	private boolean activo;
-	
+	private String usuario;
+	private String contrasena;
+
+
 	private ArrayList<Pagina> paginas;
 	private ArrayList<Post> posts;
 	
@@ -95,6 +98,22 @@ public class Usuario{
 
 	public void setPosts(ArrayList<Post> posts) {
 		this.posts = posts;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 
