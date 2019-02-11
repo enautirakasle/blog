@@ -14,7 +14,7 @@ import modelo.dao.PostModelo;
 /**
  * Servlet implementation class Posts
  */
-@WebServlet("/posts")
+@WebServlet("/admin/posts")
 public class Posts extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,20 +32,14 @@ public class Posts extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		Usuario usuarioLogueado = (Usuario) session.getAttribute("usuarioLogueado");
 
-		if (usuarioLogueado != null) {
 			request.setAttribute("navBar", "/templates/parts/navBar.jsp");
 
 			PostModelo pm = new PostModelo();
 			request.setAttribute("posts", pm.selectAll());
 			request.setAttribute("content", "/posts/listado.jsp");
 
-			request.getRequestDispatcher("templates/main.jsp").forward(request, response);
-		}else {
-			response.sendRedirect("inicio");
-		}
+			request.getRequestDispatcher("/templates/main.jsp").forward(request, response);
 	}
 
 	/**

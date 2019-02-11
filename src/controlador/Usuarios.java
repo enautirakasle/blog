@@ -12,7 +12,7 @@ import modelo.dao.UsuarioModelo;
 /**
  * Servlet implementation class usuarios
  */
-@WebServlet("/usuarios")
+@WebServlet("/admin/usuarios")
 public class Usuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +35,7 @@ public class Usuarios extends HttpServlet {
 		request.setAttribute("usuarios", um.selectAll());
 		request.setAttribute("content", "/usuarios/listado.jsp");
 		
-		request.getRequestDispatcher("templates/main.jsp").forward(request, response);
+		request.getRequestDispatcher("/templates/main.jsp").forward(request, response);
 		
 	}
 

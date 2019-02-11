@@ -7,11 +7,11 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="inicio">Home
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/inicio">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="usuarios">Usuarios</a></li>
-			<li class="nav-item"><a class="nav-link" href="categorias">Categorias</a></li>
+			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admin/usuarios">Usuarios</a></li>
+			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admin/categorias">Categorias</a></li>
 			<li class="nav-item"><a class="nav-link disabled" href="#"
 				tabindex="-1" aria-disabled="true">${usuarioLogueado.nombre}</a></li>
 		</ul>
