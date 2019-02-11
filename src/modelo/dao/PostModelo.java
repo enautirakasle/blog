@@ -23,6 +23,7 @@ public class PostModelo extends Conector{
 				post.setId(rs.getInt("id"));
 				post.setTitulo(rs.getString("titulo"));
 				post.setCuerpo(rs.getString("cuerpo"));
+				post.setPublico(rs.getBoolean("publico"));
 				posts.add(post);
 			}
 
