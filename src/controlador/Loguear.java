@@ -48,7 +48,7 @@ public class Loguear extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuarioLogueado", usuario);
 			
-			response.sendRedirect("categorias");
+			response.sendRedirect("posts");
 //			//preparar vista
 //			request.setAttribute("navBar", "/tempaltes/parts/navBar.jsp");
 //			PostModelo pm = new PostModelo();
