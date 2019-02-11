@@ -3,8 +3,8 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>nombre</th>
-			<th>descripcion</th>
+			<th>Nombre</th>
+			<th>Descripcion</th>
 			<th></th>
 		</tr>
 	</thead>
