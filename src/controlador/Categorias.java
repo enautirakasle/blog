@@ -13,7 +13,7 @@ import modelo.dao.UsuarioModelo;
 /**
  * Servlet implementation class categorias
  */
-@WebServlet("/categorias")
+@WebServlet("/admin/categorias")
 public class Categorias extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

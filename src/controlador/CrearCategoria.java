@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CrearUsuario
  */
-@WebServlet("/crearcategoria")
+@WebServlet("/admin/crearcategoria")
 public class CrearCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
