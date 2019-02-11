@@ -37,26 +37,28 @@
 </head>
 <body class="d-flex flex-column h-100">
 	<header>
-		<%@ include file="templates/parts/navBar.jsp"%>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" href="inicio">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+
+				</ul>
+			</div>
+		</nav>
 	</header>
 
 	<!-- Begin page content -->
-	<main role="main" class="flex-shrink-0">
 	<div class="container">
-		<h1>${usuarioLogueado.nombre}</h1>
-		<h1 class="mt-5">Sticky footer with fixed navbar</h1>
-		<p class="lead">
-			Pin a footer to the bottom of the viewport in desktop browsers with
-			this custom HTML and CSS. A fixed navbar has been added with
-			<code>padding-top: 60px;</code>
-			on the
-			<code>main &gt; .container</code>
-			.
-		</p>
-		<p>
-			Back to <a href="/docs/4.2/examples/sticky-footer/">the default
-				sticky footer</a> minus the navbar.
-		</p>
 		<div class="row">
 			<c:forEach items="${posts}" var="post">
 				<div class="col-4">
