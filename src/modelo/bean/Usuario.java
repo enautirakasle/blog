@@ -127,6 +127,12 @@ public class Usuario{
 		return "Usuario [id=" + id + ", dni=" + getDni() + ", nombre=" + this.nombre + ", apellido=" + this.apellido + ", activo="
 				+ this.activo + "]";
 	}
+
+	public boolean contrasenaCorrecta(String contrasena2) {
+		if(this.contrasena.equals(contrasena2)) return true;
+		return false;
+		
+	}
 	
 	
 }
