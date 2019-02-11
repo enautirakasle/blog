@@ -270,5 +270,31 @@ public class UsuarioModelo extends Conector {
 
 	}
 
+	public Usuario selectPorNombreUsuario(String nombreUsuario) {
+		PreparedStatement pst;
+		try {
+			pst = super.conexion.prepareStatement("select * from usuarios where usuario = ?");
+			pst.setString(1, nombreUsuario);
+			ResultSet rs = pst.executeQuery();
+
+			if (rs.next()) {
+				Usuario usuario = new Usuario();
+				usuario.setId(rs.getInt("id"));
+				usuario.setDni(rs.getString("dni"));
+				usuario.setNombre(rs.getString("nombre"));
+				usuario.setApellido(rs.getString("apellido"));
+				usuario.setActivo(rs.getBoolean("activo"));
+				usuario.setUsuario(rs.getString("usuario"));
+				usuario.setContrasena(rs.getString("contrasena"));
+
+				return usuario;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 }
