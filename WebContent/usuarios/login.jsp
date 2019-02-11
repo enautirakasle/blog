@@ -70,22 +70,21 @@ body {
 </style>
 </head>
 
-<body class="text-center"> 
-	<form class="form-signin" method="post" action="login">
+<body class="text-center">
+	<form class="form-signin" method="post" action="loguear">
 		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-		<label for="inputUsuario" class="sr-only">Usuario</label> <input
-			type="text" name="email" id="inputUsuario" class="form-control"
-			placeholder="Usuario" required autofocus> <label
-			for="contrasena" class="sr-only">Contraseña</label> <input
-			type="password" id="contrasena" name="contrasena" class="form-control"
-			placeholder="Contraseña" required>
+		
+		<label for="inputUsuario" class="sr-only">Usuario</label>
+		<input type="text" name="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
+		<label for="contrasena" class="sr-only">Contraseña</label>
+		<input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
 		<div class="checkbox mb-3">
 			<label> <input type="checkbox" value="remember-me">
 				Remember me
 			</label>
 		</div>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-			in</button>
+		<input class="btn btn-lg btn-primary btn-block" type="submit"
+			value="Loguear" name="loguear" />
 		<p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 	</form>
 </body>
