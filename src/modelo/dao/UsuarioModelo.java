@@ -1,11 +1,12 @@
 package modelo.dao;
 
+import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
+import java.util.List;
 
 import modelo.bean.Usuario;
 /**
@@ -28,6 +29,7 @@ public class UsuarioModelo extends Conector {
 		try {
 			Statement st = super.conexion.createStatement();
 			ResultSet rs = st.executeQuery("select * from usuarios");
+			Array arraia= rs.getArray(1);
 			while (rs.next()) {
 				Usuario usuario = new Usuario();
 				usuario.setId(rs.getInt("id"));
